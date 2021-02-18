@@ -1,5 +1,12 @@
 const LoanStateMachine = artifacts.require("LoanStateMachine");
 
 module.exports = function (deployer, _network, accounts) {
-  deployer.deploy(LoanStateMachine, 1000, 100, 100, accounts[1], accounts[2]);
+  deployer.deploy(
+    LoanStateMachine,
+    web3.utils.toWei("1"),
+    web3.utils.toWei("1", "finney"),
+    30,
+    accounts[1],
+    accounts[2]
+  );
 };
