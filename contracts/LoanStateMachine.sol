@@ -29,7 +29,7 @@ contract LoanStateMachine {
         require(msg.sender == lender, "Only lender can lend");
         require(
             address(this).balance == amount,
-            "Can lend the required amount"
+            "Can only lend the required amount"
         );
         _transitionTo(State.ACTIVE);
         borrower.transfer(amount);
